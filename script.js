@@ -5,6 +5,7 @@ const btnGray = document.createElement('button');
 const btnRgb = document.createElement('button');
 const btnSize = document.createElement('button');
 const btnReload = document.createElement('button');
+const btnEraser = document.createElement('button');
 
 function createDivs(cols, rows) {
     for (let i = 0; i < (cols * rows); i++) {
@@ -106,3 +107,16 @@ function reload() {
     buttonsContainer.appendChild(btnReload).classList.add('btn');
 }
 reload();
+
+function erase() {
+    const boxes = container.querySelectorAll('.box');
+    btnEraser.innerText = 'Eraser';
+    btnEraser.addEventListener('click', () => {
+        boxes.forEach(box => box.addEventListener('mouseover', () => {
+            box.style.background = 'white';
+        }));
+    });
+
+    buttonsContainer.appendChild(btnEraser).classList.add('btn');
+}
+erase();
