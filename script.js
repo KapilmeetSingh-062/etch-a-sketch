@@ -47,6 +47,19 @@ function resize() {
 }
 resize();
 
+function erase() {
+    const boxes = container.querySelectorAll('.box');
+    btnEraser.innerText = 'Eraser';
+    btnEraser.addEventListener('click', () => {
+        boxes.forEach(box => box.addEventListener('mouseover', () => {
+            box.style.background = 'white';
+        }));
+    });
+
+    buttonsContainer.appendChild(btnEraser).classList.add('btn');
+}
+erase();
+
 function grayColor() {
     const boxes = container.querySelectorAll('.box');
     btnGray.innerText = 'Gray';
@@ -108,15 +121,3 @@ function reload() {
 }
 reload();
 
-function erase() {
-    const boxes = container.querySelectorAll('.box');
-    btnEraser.innerText = 'Eraser';
-    btnEraser.addEventListener('click', () => {
-        boxes.forEach(box => box.addEventListener('mouseover', () => {
-            box.style.background = 'white';
-        }));
-    });
-
-    buttonsContainer.appendChild(btnEraser).classList.add('btn');
-}
-erase();
