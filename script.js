@@ -6,6 +6,7 @@ const btnRgb = document.createElement('button');
 const btnSize = document.createElement('button');
 const btnReload = document.createElement('button');
 const btnEraser = document.createElement('button');
+const btnColorPicker = document.getElementById('colorpicker');
 
 function createDivs(cols, rows) {
     for (let i = 0; i < (cols * rows); i++) {
@@ -29,18 +30,22 @@ function resize() {
         if (input == null) {
             reset();
             createDivs(16, 16);
+            erase();
             grayColor();
             blackColor();
             rgbColor();
             reload();
+            colorPicker();
         }
         else {
             reset();
             createDivs(input, input);
+            erase();
             grayColor();
             blackColor();
             rgbColor();
             reload();
+            colorPicker();
         }
     });
     buttonsContainer.appendChild(btnSize).classList.add('btn');
@@ -120,4 +125,16 @@ function reload() {
     buttonsContainer.appendChild(btnReload).classList.add('btn');
 }
 reload();
+
+function colorPicker(){
+    const boxes = container.querySelectorAll('.box');
+    btnColorPicker.addEventListener('input', (e) => {
+        boxes.forEach(box => box.addEventListener('mouseover', () => {
+            box.style.background = e.target.value;
+        }));
+    })
+    buttonsContainer.appendChild(btnColorPicker).classList.add('btn');
+
+}
+colorPicker();
 

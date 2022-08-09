@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .section {
@@ -13,6 +16,8 @@
 }
 
 h1 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -24,7 +29,7 @@ h1 {
 }
 
 .btn {
-font-size: 18px;
+    font-size: 18px;
     margin: 21px 15px;
     padding: 5px 10px;
     border-radius: 10px;
@@ -39,7 +44,35 @@ font-size: 18px;
     background-image: linear-gradient(red, yellow, green);
 }
 
-.black{
+.black {
     background-color: black;
     color: white;
+}
+
+#colorpicker{
+    border: none;
+    border-radius: 50px;
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+    width: 50px;
+    margin-top: 8px;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+input[type='color']:hover {
+    transform: scale(1.05);
+}
+
+.buttons{
+    height: 100px;
 }
